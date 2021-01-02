@@ -5,6 +5,16 @@
     <link>http://archaict.github.io/authors/</link>
     <description>Recent content in Authors on Archaict</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://archaict.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Jan 2021 18:48:12 +0700</lastBuildDate><atom:link href="http://archaict.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>archaict</title>
+      <link>http://archaict.github.io/authors/archaict/</link>
+      <pubDate>Sat, 02 Jan 2021 18:48:12 +0700</pubDate>
+      
+      <guid>http://archaict.github.io/authors/archaict/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

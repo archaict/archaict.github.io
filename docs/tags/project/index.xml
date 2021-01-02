@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>project on Archaict</title>
+    <link>http://archaict.github.io/tags/project/</link>
+    <description>Recent content in project on Archaict</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Jan 2021 18:48:12 +0700</lastBuildDate><atom:link href="http://archaict.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Archive Code 02</title>
+      <link>http://archaict.github.io/posts/code02/</link>
+      <pubDate>Sat, 02 Jan 2021 18:48:12 +0700</pubDate>
+      
+      <guid>http://archaict.github.io/posts/code02/</guid>
+      <description>This repo contains material that I used in univ projects and stuff that I learn along the way. You can use this repo&amp;rsquo;s to help with your own studies or anything else. Please post issues if something&amp;rsquo;s not right or wrong. Feel free to suggest something that you want to be posted here. Thank you!
+   Project Tree What it is Language     Android Android-studio related Projects Java   Artificial Intelligence AI, Machine Learning, and Deep Learning Python   Dotfiles Configs and Linux related stuff Mixed   Networking Cyber Security, OSINT, and anything else in between Mixed + Shell   RMarkdown Template, note-taking, and stuff related to documents R    </description>
+    </item>
+    
+  </channel>
+</rss>
