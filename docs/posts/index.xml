@@ -13,7 +13,8 @@
       <pubDate>Sat, 02 Jan 2021 18:45:00 +0700</pubDate>
       
       <guid>http://archaict.github.io/posts/code01/</guid>
-      <description>First archive, initial commit.</description>
+      <description>This repo contains material that I used in univ projects and stuff that I learn along the way. You can use this repo&amp;rsquo;s to help with your own studies or anything else. Please post issues if something&amp;rsquo;s not right or wrong. Feel free to suggest something that you want to be posted here. Thank you!
+   Project Tree What it is Language     Android Android-studio related Projects Java   Artificial Intelligence AI, Machine Learning, and Deep Learning Python   Dotfiles Configs and Linux related stuff Mixed   Networking Cyber Security, OSINT, and anything else in between Mixed + Shell   RMarkdown Template, note-taking, and stuff related to documents R    </description>
     </item>
     
   </channel>
