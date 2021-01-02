@@ -1,3 +1,119 @@
-baseURL = "http://example.org/"
+title = "Archaict"
+baseURL = "http://archaict.github.io/"
+theme = "coder"
+
 languageCode = "en-us"
-title = "My New Hugo Site"
+defaultContentLanguage = "en"
+
+paginate = 20
+
+pygmentsStyle = "b2"
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+
+[params]
+    author = "Archaict"
+    avatarURL = "figs/logo.jpg"
+    description = "Archive of foundation sixty four."
+    keywords = "dev, cybersec, personal"
+    info = "Archive, Code, Life"
+    footerContent = "is typing ..."
+    
+    dateFormat = "January 2, 2020"
+    
+    hideFooter = false
+    hideCredits = true
+    hideCopyright = true
+    since = 2019
+    
+    
+    rtl = false
+    
+    colorScheme = "auto"
+    hideColorSchemeToggle = false
+    
+    maxSeeAlsoItems = 5
+    enableTwemoji = true
+    
+    # Custom CSS
+    customCSS = []
+    customSCSS = []
+    customJS = []
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+[[params.social]]
+    name = "Github"
+    icon = "fa fa-github"
+    weight = 1
+    url = "https://github.com/archaict/"
+[[params.social]]
+    name = "Gitlab"
+    icon = "fa fa-gitlab"
+    weight = 2
+    url = "https://gitlab.com/johndoe/"
+
+
+[languages]
+    [languages.en]
+        languageName = "English"
+
+        [languages.en.menu]
+
+            [[languages.en.menu.main]]
+            name = "About"
+            weight = 1
+            url = "about/"
+
+            [[languages.en.menu.main]]
+            name = "Blog"
+            weight = 2
+            url = "posts/"
+
+            [[languages.en.menu.main]]
+            name = "Projects"
+            weight = 3
+            url = "projects/"
+
+            [[languages.en.menu.main]]
+            name = "Contact me"
+            weight = 5
+            url = "contact/"
+
+
+    [languages.bhs-id]
+        languageName = "Bahasa Indonesia"
+        title = "Archaikos"
+
+        [languages.bhs-id.params]
+            author = "Archaict"
+            info = "Archive, Code, Life"
+            description = "Jurnal oleh foundation sixty four."
+            keywords = "dev, cybersec, personal"
+            footerContent = "sedang mengetik ..."
+
+        [languages.bhs-id.menu]
+
+            [[languages.bhs-id.menu.main]]
+            name = "Tentang"
+            weight = 1
+            url = "about/"
+
+            [[languages.bhs-id.menu.main]]
+            name = "Jurnal"
+            weight = 2
+            url = "posts/"
+
+            [[languages.bhs-id.menu.main]]
+            name = "Proyek"
+            weight = 3
+            url = "projects/"
+
+            [[languages.bhs-id.menu.main]]
+            name = "Hubungi"
+            weight = 5
+            url = "contact/"

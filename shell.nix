@@ -14,11 +14,11 @@ with pkgs;
 
 let
 
-  hugo-theme-terminal = runCommand "hugo-theme-terminal" {
+  coder = runCommand "coder" {
     pinned = builtins.fetchTarball {
-      name = "hugo-theme-terminal-2020-11-16";
-      url = https://github.com/panr/hugo-theme-terminal/archive/c3f51a4c11cf8626316f561002245367d7c4fc37.tar.gz;
-      sha256 = "14949wsf05627yxmqrphl5gyv8fggjxizx5xlmvqd7h23cfjk1gs";
+      name = "coder";
+      url = https://github.com/luizdepra/hugo-coder/archive/dbe21a7fdf0d5556de5b2f2f8bdf4f64228ca241.tar.gz;
+      sha256 = "076l5vwqh2kkrcqkpbnx3lwx5qy3kn5iz8xnc2f90pxp66zn1sdg";
     };
 
     patches = [];
@@ -44,6 +44,6 @@ mkShell {
 
   shellHook = ''
     mkdir -p themes
-    ln -snf "${hugo-theme-terminal}" themes/hugo-theme-terminal
+    ln -snf "${coder}" themes/coder
   '';
 }
