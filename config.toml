@@ -1,6 +1,7 @@
 title = "Archaict"
 baseURL = "http://archaict.github.io/"
 theme = "coder"
+publishDir = "docs"
 
 languageCode = "en-us"
 defaultContentLanguage = "en"
