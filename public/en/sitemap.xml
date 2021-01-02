@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://archaict.github.io/</loc>
+    <lastmod>2021-01-02T18:45:00+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/posts/code01/</loc>
+    <lastmod>2021-01-02T18:45:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/posts/</loc>
+    <lastmod>2021-01-02T18:45:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/authors/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/authors/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/tags/"
+                />
+  </url>
+  
+</urlset>

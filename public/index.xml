@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archaict</title>
+    <link>http://archaict.github.io/</link>
+    <description>Recent content on Archaict</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Jan 2021 18:45:00 +0700</lastBuildDate><atom:link href="http://archaict.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Archive Code 01</title>
+      <link>http://archaict.github.io/posts/code01/</link>
+      <pubDate>Sat, 02 Jan 2021 18:45:00 +0700</pubDate>
+      
+      <guid>http://archaict.github.io/posts/code01/</guid>
+      <description>First archive, initial commit.</description>
+    </item>
+    
+  </channel>
+</rss>

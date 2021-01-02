@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://archaict.github.io/bhs-id/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/bhs-id/authors/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/authors/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/bhs-id/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/bhs-id/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://archaict.github.io/bhs-id/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://archaict.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bhs-id"
+                href="http://archaict.github.io/bhs-id/tags/"
+                />
+  </url>
+  
+</urlset>
