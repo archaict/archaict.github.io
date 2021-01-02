@@ -14,11 +14,11 @@ pygmentsCodeFencesGuessSyntax = true
 
 [params]
     author = "Archaict"
-    avatarURL = "figs/logo.jpg"
+    #avatarURL = "figs/logo.jpg"
     description = "Archive of foundation sixty four."
     keywords = "dev, cybersec, personal"
     info = "Archive, Code, Life"
-    footerContent = "is typing ..."
+    #footerContent = "is typing ..."
     
     dateFormat = "January 2, 2020"
     
