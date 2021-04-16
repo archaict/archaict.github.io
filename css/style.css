@@ -1,0 +1,13 @@
+@media         only screen and (max-width: 100px)
+
+html            { margin:none; font-family: 'Share Tech Mono',monospace;
+                  -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale; }
+body            { margin:40px; background-color:#222; color:#ccc; }
+.container      { margin:auto; position:absolute; top:45%; left:10%;}
+.logo-mid       { margin:auto; width:100%; letter-spacing:2px; font-weight: 800; font-size: 90px; text-align:center;}
+.logo-vertical  { positiion:relative; font-weight:600; }
+.logo-bot-right { position:absolute; bottom:30px; right:40px; font-size:24px; font-weight:800;}
+.para-bot-right { position:absolute; bottom:24px; right:40px; color:#666; font-size:12px; }
+a:link          { color: #ccc; text-decoration:none;}
+a:visited       { color: #ccc; text-decoration:none;}
+a:hover         { color: #fff; text-decoration:none;}
