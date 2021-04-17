@@ -5,7 +5,7 @@ html            { margin:none; font-family: 'Share Tech Mono',monospace,courier;
                   -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale; }
 body            { margin:40px; background-color:#222; color:#ccc; font-family: 'Share Tech Mono',monospace,courier; }
 .container      { margin:auto; position:absolute; top:45%; width:100%; margin-left:-40px; }
-.logo-mid       { margin:auto; width:100%; font-weight: 1000; font-size:80px; text-align:center; }
+.logo-mid       { margin:auto; width:100%; font-weight: 1000; font-size:90px; text-align:center; }
 .logo-vertical  { background-color:#222; @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap'); positiion:relative; font-weight:800; font-size:24px; }
 .logo-bot-right { position:absolute; bottom:30px; right:40px; font-size:24px; font-weight:800; }
 .para-bot-right { position:absolute; bottom:24px; right:40px; color:#666; font-size:12px; }
