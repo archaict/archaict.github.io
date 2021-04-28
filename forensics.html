@@ -8,8 +8,8 @@
 <i><b>Projects always come in different sizes!</b></i>
 
 </pre>
-<p>As general rule of thumb, when doing Forensics, Red/Blue Teaming, or other stuff that are based on Cyber Security, you should do it over VIRTUAL MACHINE, and do not use your daily driver to do this. You should do this inside a VM and passthrough the USB through VirtualBox or QEMU depending on what you use. It is advisable to DO NOT CONNECT VPN like HackTheBox to your host, do it INSIDE VIRTUAL MACHINE as you&amprsquo;re sharing your connection with other trained hackers inside those CTFs VPN.  </p>
-<p>If you&amprsquo;re not sure of what you&amprsquo;re doing, please refer to Cyber Security sections in this github repo or research about networking basics before you go into Digital Forensics or Cyber Security. YOU&amprsquo;VE BEEN WARNED.  </p>
+<p>As general rule of thumb, when doing Forensics, Red/Blue Teaming, or other stuff that are based on Cyber Security, you should do it over VIRTUAL MACHINE, and do not use your daily driver to do this. You should do this inside a VM and passthrough the USB through VirtualBox or QEMU depending on what you use. It is advisable to DO NOT CONNECT VPN like HackTheBox to your host, do it INSIDE VIRTUAL MACHINE as you're sharing your connection with other trained hackers inside those CTFs VPN.  </p>
+<p>If you're not sure of what you're doing, please refer to Cyber Security sections in this github repo or research about networking basics before you go into Digital Forensics or Cyber Security. YOU'VE BEEN WARNED.  </p>
 <p><br/></p>
 <a href="https://github.com/archaict/Project/blob/master/Network/Digital%20Forensics/README.org">Github Version</a>
 <p><br/></p>
@@ -92,14 +92,13 @@
 <p>5.  One data log is not enough, combine from various data sources, and determine how information fits.</p>
 <p><br/></p>
 <h2>Summary</h2>
-<p>Things in digital forensics should be approached methodically, this will of course let you as Digital Forensics investigator to do things step by step, which is crucial in keeping evidence, identify evidence, acquire it and examining its content. Remember Collection &gt Examination &gt Analysis &gt Reporting, this step-by-step guidelines, like before, will help you true to your goal in investigation. Lastly, always do image backup with methods that you will see in this page, backup can be done with `dd` or other tools, and after the backup has been created, you&amprsquo;ll be good to do live forensics.  </p>
+<p>Things in digital forensics should be approached methodically, this will of course let you as Digital Forensics investigator to do things step by step, which is crucial in keeping evidence, identify evidence, acquire it and examining its content. Remember Collection &gt Examination &gt Analysis &gt Reporting, this step-by-step guidelines, like before, will help you true to your goal in investigation. Lastly, always do image backup with methods that you will see in this page, backup can be done with `dd` or other tools, and after the backup has been created, you'll be good to do live forensics.  </p>
 <p><br/></p>
 <h2>Where to Learn &amp Practice?</h2>
-<p>-   [Foresic Focus](https://www.forensicfocus.com/)</p>
-<p>-   [Honeynet](https://www.honeynet.org/)</p>
-<p>-   CTF Sites  </p>
-<p>    -   [Hackthebox](https://www.hackthebox.eu/)</p>
-<p>    -   [CTF101](https://ctf101.org/forensics/overview/)</p>
+<p>-   <a href="https://www.forensicfocus.com/"> Foresic Focus</a></p>
+<p>-   <a href="https://www.honeynet.org/"> Honeynet</a></p>
+<p>-   <a href="https://www.hackthebox.eu/"> Hackthebox</a></p>
+<p>-   <a href="https://ctf101.org/forensics/overview/"> CTF101</a></p>
 <p><br/></p>
 <h1>Disks</h1>
 <p>In Digital Forensics evidence can come in many forms and devices, most of it can be found as hardisk and USB peripherals.  </p>
@@ -116,7 +115,7 @@
 <p>    </p>
 <p>    ALPH4NUMER1C4AL000ALPH4NUMER1C4AL  /dev/sdc1</p>
 <p><br/></p>
-<p>For this session in Digital Forensics you might want to fill your USB with some pictures or data, testdisk will create a log &amprsquo;image&amprsquo; that can be used for digital forensics. Digital forensics mostly use images of evidence that is used in investigation to recreate environment and recover lost data.  </p>
+<p>For this session in Digital Forensics you might want to fill your USB with some pictures or data, testdisk will create a log 'image' that can be used for digital forensics. Digital forensics mostly use images of evidence that is used in investigation to recreate environment and recover lost data.  </p>
 <p><br/></p>
 <p>In case you are using vm, you might want to look at USB, and check if your usb devices is passed through the vm you are using. You can check your USB device by using `fdisk`, if it is not passed through, you might instead use native linux or other alternatives.  </p>
 <p><br/></p>
@@ -133,7 +132,7 @@
 <p>    Device     Boot Start      End  Sectors  Size Id Type</p>
 <p>    /dev/sdc1        2048 60088319 60086272 28.7G 83 Linux</p>
 <p><br/></p>
-<p>You might get multiple output from `fdisk`, for this, I&amprsquo;m using Sandisk Ultra Fit 32GB, you might want 4GB/8GB to reduce time for this test.  </p>
+<p>You might get multiple output from `fdisk`, for this, I'm using Sandisk Ultra Fit 32GB, you might want 4GB/8GB to reduce time for this test.  </p>
 <p><br/></p>
 <p>    $ lsusb</p>
 <p>    </p>
@@ -402,7 +401,7 @@
 <h1>Volatile</h1>
 <p>Volatile memory are types of memory that are usually stored in RAM **only** when the systems are on power. This type of memory requires power to maintain its stored information, thus when the computer is shutdown, either normally or abruptedly or interrupted in any way, the data inside the storage will be erased.  </p>
 <p><br/></p>
-<p>Since the tools are not installed, we have to install it manually by running commands below. This command will use the `setup.py` that are part of the repos to install its dependencies. Though it is installing all of its contents, you might still want to refer to its installation pages, since some errors will be found if you didn&amprsquo;t install other tools alongside `volatility`. Below is the list of needed installation after installing `volatility`.  </p>
+<p>Since the tools are not installed, we have to install it manually by running commands below. This command will use the `setup.py` that are part of the repos to install its dependencies. Though it is installing all of its contents, you might still want to refer to its installation pages, since some errors will be found if you didn't install other tools alongside `volatility`. Below is the list of needed installation after installing `volatility`.  </p>
 <p><br/></p>
 <h2>Installing</h2>
 <p>-   Distorm3</p>
@@ -450,7 +449,7 @@
 <p>    $ wget http://files.sempersecurus.org/dumps/cridex_memdump.zip ~/IMG/cridex_memdump.zip</p>
 <p>    $ unzip cridex_memdump.zip</p>
 <p><br/></p>
-<p>First, check if you&amprsquo;re inside `~/IMG` directory, after that we can proceed to `vol.py`. You might see some dependencies error, this is not intended, but because volatility itself has dependencies on `python2` modules.  </p>
+<p>First, check if you're inside `~/IMG` directory, after that we can proceed to `vol.py`. You might see some dependencies error, this is not intended, but because volatility itself has dependencies on `python2` modules.  </p>
 <p><br/></p>
 <p>    $ vol.py -f cridex.vmem imageinfo</p>
 <p>    </p>
@@ -559,7 +558,7 @@
 <p>    0x02087620 172.16.112.128:1038       41.168.5.140:8080         1484</p>
 <p>    0x023a8008 172.16.112.128:1037       125.19.103.198:8080       1484</p>
 <p><br/></p>
-<p>You can see Geolocation of the IP&amprsquo;s using this:  </p>
+<p>You can see Geolocation of the IP's using this:  </p>
 <p><br/></p>
 <p>    $ curl https://freegeoip.app/xml/41.168.5.140</p>
 <p>    &ltResponse&gt</p>
@@ -706,10 +705,9 @@
 <p>    &gt&gt&gt pkt.show()</p>
 <p><br/></p>
 <h1>Android</h1>
-<p>Mobile digital forensics can be done in multiple ways, either manually or automatically. ADB tools are needed, also victim&amprsquo;s phone USB debugging option should be enabled.  </p>
+<p>Mobile digital forensics can be done in multiple ways, either manually or automatically. ADB tools are needed, also victim's phone USB debugging option should be enabled.  </p>
 <p><br/></p>
 <h2>Android Triage</h2>
-<p>This script is used to alleviate the many commands that are available in ADB tools. ADB stands for Android Debug Bridge, this tool usually used to help developers in debugging Android applications during creation or compilation time in Android Studio (or others). Android Triage created by Mattia Epifani, this bash script can be used to automatize operations that are usually &ampldquo;cumbersome&amprdquo; - if you&amprsquo;re lazy - to a simple to understand script.  </p>
-<p><br/></p>
+<p>This script is used to alleviate the many commands that are available in ADB tools. ADB stands for Android Debug Bridge, this tool usually used to help developers in debugging Android applications during creation or compilation time in Android Studio (or others). Android Triage created by Mattia Epifani, this bash script can be used to automatize operations that are usually "cumbersome" - if you're lazy - to a simple to understand script.  </p>
 <p>This is options that are available on the script itself, you might want to see inside the script in android&ltsub&gttriage&lt/sub&gt github.  </p>
 <p><br/></p>
