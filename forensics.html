@@ -705,9 +705,29 @@
 <p>    &gt&gt&gt pkt.show()</p>
 <p><br/></p>
 <h1>Android</h1>
-<p>Mobile digital forensics can be done in multiple ways, either manually or automatically. ADB tools are needed, also victim's phone USB debugging option should be enabled.  </p>
+<p>Mobile digital forensics can be done in multiple ways, either manually or automatically. ADB tools are needed, also victim&amprsquo;s phone USB debugging option should be enabled.  </p>
 <p><br/></p>
 <h2>Android Triage</h2>
-<p>This script is used to alleviate the many commands that are available in ADB tools. ADB stands for Android Debug Bridge, this tool usually used to help developers in debugging Android applications during creation or compilation time in Android Studio (or others). Android Triage created by Mattia Epifani, this bash script can be used to automatize operations that are usually "cumbersome" - if you're lazy - to a simple to understand script.  </p>
-<p>This is options that are available on the script itself, you might want to see inside the script in android&ltsub&gttriage&lt/sub&gt github.  </p>
+<p>This script is used to alleviate the many commands that are available in ADB tools. ADB stands for Android Debug Bridge, this tool usually used to help developers in debugging Android applications during creation or compilation time in Android Studio (or others). Android Triage created by Mattia Epifani, this bash script can be used to automatize operations that are usually &ampldquo;cumbersome&amprdquo; - if you&amprsquo;re lazy - to a simple to understand script.  </p>
+<p>This script can be used to backup data from mobile devices, this process can be categorized as acquisition phase. On older devices until Marshmallow, we can use specialized OS like Santoku to help with data acquisition. This is also true when we want to extract apk files that are available on Android devices. There are also some requirements that have to be met when doing acquisition:</p>
+<p>- Phone should be unlocked. This can be achieved through bruteforcing or using devices like Cellebrite, though the former is not possible if you’re not under government or big companies.</p>
+<p>- Acquiring data needs phone to be connected to your computer, this is for using ADB with the phone itself. ADB are tools that are used to bridge connection between your phone and computer.</p>
+<p>- Complexity of Android devices are increased every releases, this is to solve security issues through patching and new release of Android version. It is currently not possible to use out of the box device to stop pinging through google, even during offline period as long there is connections.</p>
+<p>- Commercial tools are expensives, therefore the alternatives are open source that utilize adb tools to do forensics. This still needs further research.</p>
 <p><br/></p>
+<h2>Phases</h2>
+<p><b>First</b>, we need to acquire device that was found at the crime scene. Next, to identify the device, we can either do it manually or through adb tools. ADB comes with adb devices command to look at device fingerprint once connected through usb debugging. USB debugging can be accessed through settings &gt developer options &gt USB debugging. Through android_triage we can get more info about the device, it will show through ncurses interface in terminal. Data that can be acquired will be stored in your home folder.  </p>
+<p><b>Second</b>, we need to prepare all the possible tools that can be used during investigation, either Android Studio, tools that already mentioned above, and all the hardware that needed, especially one that can run VMs reliably.  </p>
+<p><b>Third</b>, we need to isolate the device from networks by switching off WiFi and Bluetooth. This step is crucial, also remember to take off SIM Card(s) that are located inside the SIM tray.  </p>
+<p><b>Fourth</b>, we need to process and backup data through adb or other tools, we can do this by imaging through android_triage or aflogical-ose. android_triage can execute command through scripting or creates backup by installing aflogical-ose and other tools that are available for android data acquisition. This data then can be used with other tools like Autopsy, Evidence Tree, or by mounting its image. Other place that you might want to see is sd card, we can create a backup through dd or dc3dd or by using propirietary software such as EaseUS Data.  </p>
+<p>Some command that you might found during this process when doing things through adb are as follows:  </p>
+<p><b>- adb devices  </b></p>
+<p>  Useful to know if your device is attached or not through your usb to your computer.</p>
+<p><b>- adb reboot bootloader </b></p>
+<p>  Bootloader is the boot screen that you see when the device starts, bootloader itself starts before that splash screen starts, it is to load processes during boot, and this command is to interupt that boot command and go into where the bootloader resides, you can then connect through the next step.</p>
+<p><b>- fastboot oem unlock  </b></p>
+<p>  To unlock the device from its manufacturer - although its capability can’t be vouched for companies that lock its bootloader - it is still can be done to device that comes from Samsung Galaxy line of phones or most of other manufacturers. Known device that lock its bootloader and can’t be rooted are Vivo and Oppo, unless they share codes to unlock its bootloader.</p>
+<p><b>Fifth</b>, after we process through the steps in phase four, we need to verify the hash to know either the data has been tampered or not. Tools like AccessData FTK Imager can help with exploring the data that are still saved inside memory blocks. This is also why you might want to wipe clean android devices through factory reset and beyond to delete everything.</p>
+<p>Lastly, is to document each steps that are taken during data acquisition, this is crucial to create case file that can be accepted in the court.</p>
+<p>Other Tools</p>
+<p>If you understand a little bit of how to unlock and rooting your device, you might want to change your ROM to a custom rom that are available in many places, one of it is XDA-Developers site. The point is to safely disconnect you with google and understand of how the device itself works. Even if Android itself is brainchild from Linux Kernel, thats where the similarity ends.</p>
