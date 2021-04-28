@@ -1,0 +1,715 @@
+<head><link rel="stylesheet" href="css/minimal.css">
+<title>ARCHAICT GITHUB CODEX</title>
+<pre>
+
+╺┳┓╻┏━╸╻╺┳╸┏━┓╻     ┏━╸┏━┓┏━┓┏━╸┏┓╻┏━┓╻┏━╸┏━┓
+ ┃┃┃┃╺┓┃ ┃ ┣━┫┃     ┣╸ ┃ ┃┣┳┛┣╸ ┃┗┫┗━┓┃┃  ┗━┓
+╺┻┛╹┗━┛╹ ╹ ╹ ╹┗━╸   ╹  ┗━┛╹┗╸┗━╸╹ ╹┗━┛╹┗━╸┗━┛
+<i><b>Projects always come in different sizes!</b></i>
+
+</pre>
+<p>As general rule of thumb, when doing Forensics, Red/Blue Teaming, or other stuff that are based on Cyber Security, you should do it over VIRTUAL MACHINE, and do not use your daily driver to do this. You should do this inside a VM and passthrough the USB through VirtualBox or QEMU depending on what you use. It is advisable to DO NOT CONNECT VPN like HackTheBox to your host, do it INSIDE VIRTUAL MACHINE as you&amprsquo;re sharing your connection with other trained hackers inside those CTFs VPN.  </p>
+<p>If you&amprsquo;re not sure of what you&amprsquo;re doing, please refer to Cyber Security sections in this github repo or research about networking basics before you go into Digital Forensics or Cyber Security. YOU&amprsquo;VE BEEN WARNED.  </p>
+<p><br/></p>
+<a href="https://github.com/archaict/Project/blob/master/Network/Digital%20Forensics/README.org">Github Version</a>
+<p><br/></p>
+<h1>What it is?</h1>
+<p>Investigation &amp analysis technique to gather, and preserve evidence from a particular computing device. Digital Forensics can also be considered as Blue Teaming, while cybersecs Attack are considered Red Teaming. Digital Forensics also laid some basics for your computing knowledge, it also helps if you have grasps how computer, networks, and its pheriperals works beforehand.</p>
+<p><br/></p>
+<h2>Digital Forensics Step</h2>
+<p>1.  Identifying</p>
+<p>2.  Preserving</p>
+<p>3.  Recovering</p>
+<p>4.  Analyzing</p>
+<p>5.  Presenting</p>
+<p><br/></p>
+<h2>CEAR Steps</h2>
+<p>CEAR: Collection &gt Examination &gt Analysis &gt Reporting</p>
+<p>Example: Mobile &gt Data &gt Information &gt Evidence</p>
+<p><br/></p>
+<p>You can gather data from mobile through dumping data and backups, using metasploit to gather infromation. MsfConsole lets you do remote hacking, but in this case it can be used in digital forensics as cybersecs red teaming, and analyze data as blue team.</p>
+<p><br/></p>
+<h2>Identify</h2>
+<p>1.  What the main goals</p>
+<p>2.  Identify media types</p>
+<p>3.  Survey it first</p>
+<p>    </p>
+<p>    Once you know the goal fo the investigation, this will then clear the path as of what you need to get, either there are media/file types that you have to be aware of while investigating, or look at what might be possible to be taken as evidence.</p>
+<p><br/></p>
+<h2>Acquire</h2>
+<p>1.  Plan it first</p>
+<p>2.  Start acquire</p>
+<p>3.  Verify the data  </p>
+<p>    </p>
+<p>    What needs to be done? Like the step before it, identify what types of data is useful, and then create a plan as how to get those data. Acquire these data from any possible sources, either it is USB, Harddisk or other peripherals that can be used as data storage.</p>
+<p>    </p>
+<p>    There is also anti-forensics ( Compressing &amp Password ) that is used to hinder forensics, since metadata is useful, some zips might reap off those metadata from files depending on how they compress the file. Password protected data or encrypted files can also hinder investigation in some way.</p>
+<p><br/></p>
+<h2>Data Type</h2>
+<p>1.  Volatile [ RAM ]</p>
+<p>2.  Non-Volatile [ Media, Text Files ]  </p>
+<p>    </p>
+<p>    You might see more of this below in the example of tools used for each data type.</p>
+<p><br/></p>
+<h2>Examination</h2>
+<p>1.  Bypassing any OS security Features  </p>
+<p>    -   Windows: bitlocker &lt unlock first</p>
+<p>2.  Bypassing Encryption  </p>
+<p>    -   Shut off any security measure before examine</p>
+<p>3.  Struggling with file compression and Access Control  </p>
+<p>    -   Cellebrite &gt Iphone &lt No matter, it will still be unlocked, it is used in big company.</p>
+<p>4.  Checking millions of data  </p>
+<p>    -   Always check data that are important, not everything &lt take times.</p>
+<p><br/></p>
+<h2>Modification Access Creation [MAC]</h2>
+<p>Timestamp create, update, etc  </p>
+<p><br/></p>
+<p>-   Relation between time to each timestamp [ 1:00 user, 1:05 breached 1:10 user ]</p>
+<p><br/></p>
+<h2>Analysis</h2>
+<p>-   People [ Who? A &gt B Relationship? ]</p>
+<p>-   Places [ Server room location? Last location? CCTV? ]</p>
+<p>-   Items  [ Hardisk, Flashdisk? Information that are taken? ]</p>
+<p>-   Events [ Timestamp, location, user relation? ]</p>
+<p>-   Determine how every elements connected</p>
+<p><br/></p>
+<h2>Reporting</h2>
+<p>-   Always give alternative explanations as you can  </p>
+<p>    -   Do not report only one conclusion always use multiple</p>
+<p>    -   Is it possible that another conclusion can be taken?</p>
+<p>-   Audience Consideration  </p>
+<p>    -   Judge may not understand techincal jargon</p>
+<p>    -   Use easily understood technical jargon</p>
+<p>-   Actionable Information  </p>
+<p>    -   Ask information from collected evidence</p>
+<p>    -   Do you know disk USB Flashdisk?</p>
+<p><br/></p>
+<h2>Basic Technique</h2>
+<p>1.  Methodical approaches when examine the data.</p>
+<p>2.  Examine the copy, not the original one.</p>
+<p>3.  Raw log have more confidence than in normalized one.</p>
+<p>4.  Rely on file headers, not file extensions.</p>
+<p>5.  One data log is not enough, combine from various data sources, and determine how information fits.</p>
+<p><br/></p>
+<h2>Summary</h2>
+<p>Things in digital forensics should be approached methodically, this will of course let you as Digital Forensics investigator to do things step by step, which is crucial in keeping evidence, identify evidence, acquire it and examining its content. Remember Collection &gt Examination &gt Analysis &gt Reporting, this step-by-step guidelines, like before, will help you true to your goal in investigation. Lastly, always do image backup with methods that you will see in this page, backup can be done with `dd` or other tools, and after the backup has been created, you&amprsquo;ll be good to do live forensics.  </p>
+<p><br/></p>
+<h2>Where to Learn &amp Practice?</h2>
+<p>-   [Foresic Focus](https://www.forensicfocus.com/)</p>
+<p>-   [Honeynet](https://www.honeynet.org/)</p>
+<p>-   CTF Sites  </p>
+<p>    -   [Hackthebox](https://www.hackthebox.eu/)</p>
+<p>    -   [CTF101](https://ctf101.org/forensics/overview/)</p>
+<p><br/></p>
+<h1>Disks</h1>
+<p>In Digital Forensics evidence can come in many forms and devices, most of it can be found as hardisk and USB peripherals.  </p>
+<p><br/></p>
+<p>First we need to check if USB is connected:  </p>
+<p><br/></p>
+<p>    $ sudo fdisk -l</p>
+<p>    $ lsusb</p>
+<p><br/></p>
+<p>To check MD5 &amp SHA you can use this command:  </p>
+<p><br/></p>
+<p>    $ sudo md5sum /dev/sdc1</p>
+<p>    $ sudo sha1sum /dev/sdc1</p>
+<p>    </p>
+<p>    ALPH4NUMER1C4AL000ALPH4NUMER1C4AL  /dev/sdc1</p>
+<p><br/></p>
+<p>For this session in Digital Forensics you might want to fill your USB with some pictures or data, testdisk will create a log &amprsquo;image&amprsquo; that can be used for digital forensics. Digital forensics mostly use images of evidence that is used in investigation to recreate environment and recover lost data.  </p>
+<p><br/></p>
+<p>In case you are using vm, you might want to look at USB, and check if your usb devices is passed through the vm you are using. You can check your USB device by using `fdisk`, if it is not passed through, you might instead use native linux or other alternatives.  </p>
+<p><br/></p>
+<p>    $ sudo fdisk -l</p>
+<p>    </p>
+<p>    Disk /dev/sdc: 28.65 GiB, 30765219840 bytes, 60088320 sectors</p>
+<p>    Disk model:  SanDisk 3.2Gen1</p>
+<p>    Units: sectors of 1 * 512 = 512 bytes</p>
+<p>    Sector size (logical/physical): 512 bytes / 512 bytes</p>
+<p>    I/O size (minimum/optimal): 512 bytes / 512 bytes</p>
+<p>    Disklabel type: dos</p>
+<p>    Disk identifier: 0xa1afdc4c</p>
+<p>    </p>
+<p>    Device     Boot Start      End  Sectors  Size Id Type</p>
+<p>    /dev/sdc1        2048 60088319 60086272 28.7G 83 Linux</p>
+<p><br/></p>
+<p>You might get multiple output from `fdisk`, for this, I&amprsquo;m using Sandisk Ultra Fit 32GB, you might want 4GB/8GB to reduce time for this test.  </p>
+<p><br/></p>
+<p>    $ lsusb</p>
+<p>    </p>
+<p>    Bus 001 Device 002: ID 8087:8000 Intel Corp. Integrated Rate Matching Hub</p>
+<p>    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</p>
+<p>    Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</p>
+<p>    Bus 002 Device 011: ID 0781:5583 SanDisk Corp. Ultra Fit</p>
+<p>    Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</p>
+<p><br/></p>
+<p>In this session we will use gparted to emulate lost files inside a USB device. Since you have to actually check if it is connected or not, you might want to run `fdisk` to list available device with its partitions.  </p>
+<p><br/></p>
+<h2>Gparted &amp Parted</h2>
+<p>Gparted can format devices into multiple format, you can specify to use ext4 in gparted to format your test device into ext4 devices.  </p>
+<p><br/></p>
+<p>    $ sudo gparted</p>
+<p><br/></p>
+<p>You will be asked for root password, you should fill this out first before going further. Root permission is needed because you need to access USB peripherals itself to create a backup, since Linux need system/admin level access to tamper with the device, therefore you should use root previleges to run those command.  </p>
+<p><br/></p>
+<p>For this sections I will instead use command line interface to format, but before that, we have to look at what type the device that we use.  </p>
+<p><br/></p>
+<p>    $ df -hT</p>
+<p>    </p>
+<p>    Filesystem     Type      Size  Used Avail Use% Mounted on</p>
+<p>    devtmpfs       devtmpfs  192M     0  192M   0% /dev</p>
+<p>    tmpfs          tmpfs     1.9G     0  1.9G   0% /dev/shm</p>
+<p>    tmpfs          tmpfs     960M  6.9M  953M   1% /run</p>
+<p>    tmpfs          tmpfs     1.9G  600K  1.9G   1% /run/wrappers</p>
+<p>    /dev/sda3      ext4      423G  216G  186G  54% /</p>
+<p>    tmpfs          tmpfs     4.0M     0  4.0M   0% /sys/fs/cgroup</p>
+<p>    tmpfs          tmpfs     384M   12K  384M   1% /run/user/1000</p>
+<p>    /dev/sdc1      ext4       29G   44M   27G   1% /run/media/user/...</p>
+<p><br/></p>
+<p>As you can see, it is `/dev/sdc1` with `ext4` format, then we can continue into the next part.  </p>
+<p><br/></p>
+<p>    $ sudo parted</p>
+<p>    </p>
+<p>    GNU Parted 3.3</p>
+<p>    Using /dev/sdc</p>
+<p>    Welcome to GNU Parted! Type &#39help&#39 to view a list of commands.</p>
+<p>    </p>
+<p>    (parted) print</p>
+<p>    Model:  USB  SanDisk 3.2Gen1 (scsi)</p>
+<p>    Disk /dev/sdc: 30.8GB</p>
+<p>    Sector size (logical/physical): 512B/512B</p>
+<p>    Partition Table: msdos</p>
+<p>    Disk Flags:</p>
+<p>    </p>
+<p>    Number  Start   End     Size    Type     File system  Flags</p>
+<p>     1      1049kB  30.8GB  30.8GB  primary</p>
+<p>    </p>
+<p>    (parted) mklabel msdos</p>
+<p>    Warning: The existing disk label on /dev/sdc will be destroyed and all data on</p>
+<p>    this disk will be lost. Do you want to continue?</p>
+<p>    Yes/No? yes</p>
+<p>    </p>
+<p>    (parted) mkpart</p>
+<p>    Partition type?  primary/extended? primary</p>
+<p>    File system type?  [ext2]? ext4</p>
+<p>    Start? 0%</p>
+<p>    End? -1s</p>
+<p>    </p>
+<p>    (parted) quit</p>
+<p><br/></p>
+<p>Be sure to umount device before running this. This command will format and delete files inside the USB.  </p>
+<p><br/></p>
+<p>    $ sudo umount /dev/sdc1</p>
+<p>    $ sudo mkfs.ext4 /dev/sdc1</p>
+<p>    </p>
+<p>    mke2fs 1.45.5 (07-Jan-2020)</p>
+<p>    /dev/sdc1 contains a ext4 file system</p>
+<p>            last mounted on Wed Mar  2 00:00:00 2021</p>
+<p>    Proceed anyway? (y,N) y</p>
+<p>    Creating filesystem with 7510784 4k blocks and 1880480 inodes</p>
+<p>    Filesystem UUID: ce049cf2-3f7b-44ca-b309-0e72b73c485a</p>
+<p>    Superblock backups stored on blocks:</p>
+<p>            32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,         4096000</p>
+<p>    </p>
+<p>    Allocating group tables: done</p>
+<p>    Writing inode tables: done</p>
+<p>    Creating journal (32768 blocks): done</p>
+<p>    Writing superblocks and filesystem accounting information: done</p>
+<p><br/></p>
+<h1>Data Dump</h1>
+<p>By itself, it can do most things like formating USB devices and creating a backup image from said device. dd can also be used to convert and copy files. Some people use this to create an image that can be flashed again, this can be used for raspberry pi devices.  </p>
+<p><br/></p>
+<p>    # Description</p>
+<p>    </p>
+<p>    if = Input File</p>
+<p>    of = Output File</p>
+<p>    bs = Bytes (1M-4M)</p>
+<p>    count = copy N input blocks</p>
+<p>    </p>
+<p>    # Command</p>
+<p>    </p>
+<p>    $ sudo dd if=/dev/zero of=/tmp/archive1 bs=1M count=1000000</p>
+<p>    $ sudo dd if=/dev/urandom of=/tmp/archive1 bs=1M count=1000000</p>
+<p><br/></p>
+<p>Check and create SHA1:  </p>
+<p><br/></p>
+<p>    $ sudo sha1sum /dev/sdc1</p>
+<p>    $ cat split test.img | sha1sum</p>
+<p><br/></p>
+<h1>Testdisk</h1>
+<p>Run application with root previleges. Testdisk is designed to recover lost partitions and recover boot sessions that caused by faulty software or human error. Below is TestDisk description from its program.  </p>
+<p><br/></p>
+<p>    TestDisk is free data recovery software designed to help recover lost</p>
+<p>    partitions and/or make non-booting disks bootable again when these symptoms</p>
+<p>    are caused by faulty software, certain types of viruses or human error.</p>
+<p>    It can also be used to repair some filesystem errors.</p>
+<p>    </p>
+<p>    Information gathered during TestDisk use can be recorded for later</p>
+<p>    review. If you choose to create the text file, testdisk.log , it</p>
+<p>    will contain TestDisk options, technical information and various</p>
+<p>    outputs; including any folder/file names TestDisk was used to find and</p>
+<p>    list onscreen.</p>
+<p><br/></p>
+<p>-   Fix partition table, recover deleted partition</p>
+<p>-   Recover FAT32 boot sector from its backup</p>
+<p>-   Rebuild FAT12/FAT16/FAT32 boot sector</p>
+<p>-   Fix FAT tables</p>
+<p>-   Rebuild NTFS boot sector</p>
+<p>-   Recover NTFS boot sector from its backup</p>
+<p>-   Fix MFT using MFT mirror</p>
+<p>-   Locate ext2/ext3/ext4 Backup SuperBlock</p>
+<p>-   Undelete files from FAT, exFAT, NTFS and ext2 filesystem</p>
+<p>-   Copy files from deleted FAT, exFAT, NTFS and ext2/ext3/ext4 partitions.</p>
+<p><br/></p>
+<p>To actually run the program, you can run this as root in your terminal.  </p>
+<p><br/></p>
+<p>    $ sudo testdisk</p>
+<p><br/></p>
+<p>This will create a curses windows that you can interact with. I wont include long blocks of text, so I will include what we will use, instead all the text inside the terminal screen.  </p>
+<p><br/></p>
+<p>    TestDisk 7.1, Data Recovery Utility, July 2019</p>
+<p>    Christophe GRENIER &ltgrenier@cgsecurity.org&gt</p>
+<p>    https://www.cgsecurity.org</p>
+<p>    </p>
+<p>    Use arrow keys to select, then press Enter key:</p>
+<p>    &gt[ Create ] Create a new log file</p>
+<p>     [ Append ] Append information to log file</p>
+<p>     [ No Log ] Don&#39t record anything</p>
+<p><br/></p>
+<p>We need to select media, in this case `/dev/sdc`, after that we will select partition table that are used, for now just use defaulted partition table for me it is `Intel`.  </p>
+<p><br/></p>
+<p>    Select a media (use Arrow keys, then press Enter):</p>
+<p>     Disk /dev/sda - 500 GB / 465 GiB - ST500LX012-SSHD-8GB</p>
+<p>    &gtDisk /dev/sdc - 30 GB / 28 GiB - USB SanDisk 3.2Gen1</p>
+<p><br/></p>
+<p>    Disk /dev/sdc - 30 GB / 28 GiB - USB SanDisk 3.2Gen1</p>
+<p>    </p>
+<p>    Please select the partition table type, press Enter when done.</p>
+<p>    &gt[Intel  ] Intel/PC partition</p>
+<p>     [EFI GPT] EFI GPT partition map (Mac i386, some x86_64...)</p>
+<p>     [Humax  ] Humax partition table</p>
+<p>     [Mac    ] Apple partition map (legacy)</p>
+<p>     [None   ] Non partitioned media</p>
+<p>     [Sun    ] Sun Solaris partition</p>
+<p>     [XBox   ] XBox partition</p>
+<p>     [Return ] Return to disk selection</p>
+<p><br/></p>
+<p>We choose `advanced` and select `Image Creation` in the next screen.  </p>
+<p><br/></p>
+<p>     [ Analyse  ] Analyse current partition structure and search for lost partitions</p>
+<p>    &gt[ Advanced ] Filesystem Utils</p>
+<p>     [ Geometry ] Change disk geometry</p>
+<p>     [ Options  ] Modify options</p>
+<p>     [ MBR Code ] Write TestDisk MBR code to first sector</p>
+<p>     [ Delete   ] Delete all data in the partition table</p>
+<p>     [ Quit     ] Return to disk selection</p>
+<p><br/></p>
+<p>         Partition                  Start        End    Size in sectors</p>
+<p>    &gt 1 P Linux                    1   0  1 29339  63 32   60086272</p>
+<p>    </p>
+<p>     [  Type  ]  [Superblock]  [  List  ] &gt[Image Creation]  [  Quit  ]</p>
+<p>                                    Create an image</p>
+<p><br/></p>
+<p>Press C to go to select the destination if it is already correct.  </p>
+<p><br/></p>
+<p>    Please select where to store the file image.dd (30764 MB), an image of the</p>
+<p>    partition</p>
+<p>    Keys: Arrow keys to select another directory</p>
+<p>          C when the destination is correct</p>
+<p>          Q to quit</p>
+<p>    Directory /home/user/FORENSICS</p>
+<p>     drwxr-xr-x  1000   100      4096  3-Mar-2021 19:16 .</p>
+<p>    &gtdrwx------  1000   100      4096  3-Mar-2021 19:16 ..</p>
+<p>     -rw-r--r--     0     0      6705  3-Mar-2021 19:16 testdisk.log</p>
+<p><br/></p>
+<p>Remember when I said to use 4GB/8GB? Take a cup of tea or coffee, because it will take a long time. Once done, you will have `image.dd` in your folder.  </p>
+<p><br/></p>
+<p>    Disk /dev/sdc - 30 GB / 28 GiB - USB SanDisk 3.2Gen1</p>
+<p>     1 P Linux                    1   0  1 29339  63 32   60086272</p>
+<p>    11.37 % =======&gt</p>
+<p><br/></p>
+<p>    Directory /home/user/FORENSICS</p>
+<p>    .rw-r--r--  30G root  3 Mar 19:31 image.dd</p>
+<p>    .rw-r--r-- 6.8k root  3 Mar 19:34 testdisk.log</p>
+<p><br/></p>
+<p>Once done, we can go to the next step, recovery.  </p>
+<p><br/></p>
+<h1>PhotoRec</h1>
+<p>To actually recover the data that are lost from the device, you can use this software, here is the description from &lthttps://www.cgsecurity.org&gt.  </p>
+<p><br/></p>
+<p>    PhotoRec is file data recovery software designed to recover lost files including video, documents and archives from hard disks, CD-ROMs, and lost pictures (thus the Photo Recovery name) from digital camera memory. PhotoRec ignores the file system and goes after the underlying data, so it will still work even if your media&#39s file system has been severely damaged or reformatted.</p>
+<p><br/></p>
+<p>You can use the `image.dd` that we have backed up before to recover the data.  </p>
+<p><br/></p>
+<p>    $ sudo photorec image.dd</p>
+<p>    </p>
+<p>    Select a media (use Arrow keys, then press Enter):</p>
+<p>    &gtDisk image.dd - 30 GB / 28 GiB (RO)</p>
+<p>    </p>
+<p>    &gt[Proceed ]  [  Quit  ]</p>
+<p><br/></p>
+<p>Choose `ext4` partition that we specify before.  </p>
+<p><br/></p>
+<p>         Partition                  Start        End    Size in sectors</p>
+<p>          Unknown                  0   0  1  3740  50 22   60086272 [Whole disk]</p>
+<p>    &gt   P ext4                     0   0  1  3740  50 22   60086272</p>
+<p><br/></p>
+<p>    To recover lost files, PhotoRec needs to know the filesystem type where the</p>
+<p>    file were stored:</p>
+<p>    &gt[ ext2/ext3 ] ext2/ext3/ext4 filesystem</p>
+<p>     [ Other     ] FAT/NTFS/HFS+/ReiserFS/...</p>
+<p><br/></p>
+<p>    Please choose if all space needs to be analysed:</p>
+<p>    &gt[   Free    ] Scan for file from ext2/ext3 unallocated space only</p>
+<p>     [   Whole   ] Extract files from whole partition</p>
+<p><br/></p>
+<p>    Please select a destination to save the recovered files to.</p>
+<p>    Do not choose to write the files to the same partition they were stored on.</p>
+<p>    Keys: Arrow keys to select another directory</p>
+<p>          C when the destination is correct</p>
+<p>          Q to quit</p>
+<p>    Directory /home/archaict/FORENSICS</p>
+<p>    &gtdrwxr-xr-x  1000   100      4096  3-Mar-2021 19:41 .</p>
+<p>     drwx------  1000   100      4096  3-Mar-2021 19:16 ..</p>
+<p>     -rw-r--r--     0     0 30764171264  3-Mar-2021 19:31 image.dd</p>
+<p>     -rw-r--r--     0     0     40960  3-Mar-2021 19:41 photorec.se2</p>
+<p>     -rw-r--r--     0     0      6776  3-Mar-2021 19:34 testdisk.log</p>
+<p><br/></p>
+<p>You will then have multiple results depends on what you recover from the USB.  </p>
+<p><br/></p>
+<p>    Disk image.dd - 30 GB / 28 GiB (RO)</p>
+<p>         Partition                  Start        End    Size in sectors</p>
+<p>       P ext4                     0   0  1  3740  50 22   60086272</p>
+<p>    </p>
+<p>    Destination /home/archaict/FORENSICS/recup_dir</p>
+<p>    </p>
+<p>    Pass 2 - Reading sector    7336528/60086272, 32 files found</p>
+<p>    Elapsed time 0h02m22s - Estimated time to completion 0h17m00</p>
+<p>    a: 16 recovered</p>
+<p>    txt: 14 recovered</p>
+<p>    exe: 1 recovered</p>
+<p>    gz: 1 recovered</p>
+<p><br/></p>
+<p>Once done, you will have the data that are recovered inside `recup_dir.1`.  </p>
+<p><br/></p>
+<p>    Directory /home/user/FORENSICS</p>
+<p>    .rw-r--r--  30G root  3 Mar 19:31 image.dd</p>
+<p>    .rw-r--r--  40k root  3 Mar 19:41 photorec.se2</p>
+<p>    .rw-r--r--  41k root  3 Mar 19:47 photorec.ses</p>
+<p>    drwxr-xr-x    - root  3 Mar 19:45 recup_dir.1</p>
+<p>    .rw-r--r-- 6.8k root  3 Mar 19:34 testdisk.log</p>
+<p><br/></p>
+<h1>Volatile</h1>
+<p>Volatile memory are types of memory that are usually stored in RAM **only** when the systems are on power. This type of memory requires power to maintain its stored information, thus when the computer is shutdown, either normally or abruptedly or interrupted in any way, the data inside the storage will be erased.  </p>
+<p><br/></p>
+<p>Since the tools are not installed, we have to install it manually by running commands below. This command will use the `setup.py` that are part of the repos to install its dependencies. Though it is installing all of its contents, you might still want to refer to its installation pages, since some errors will be found if you didn&amprsquo;t install other tools alongside `volatility`. Below is the list of needed installation after installing `volatility`.  </p>
+<p><br/></p>
+<h2>Installing</h2>
+<p>-   Distorm3</p>
+<p>-   Yara</p>
+<p>-   PyCrypto</p>
+<p>-   PIL</p>
+<p>-   OpenPyxl</p>
+<p>-   ujson</p>
+<p>-   pytz</p>
+<p>-   IPython</p>
+<p>-   libforensic1394</p>
+<p><br/></p>
+<p>FIXME! There are some dependencies that comes from python version 2, so you might want to install those dependencies using this command. You can bypass installing the dependencies for now, since it seems the installation is a bit broken. Skip ahead to the next code block.  </p>
+<p><br/></p>
+<p>    # Install python2 pip2 and deps</p>
+<p>    $ wget https://bootstrap.pypa.io/get-pip.py</p>
+<p>    $ sudo python2 get-pip.py</p>
+<p>    $ pip2 install --upgrade setuptools</p>
+<p>    $ sudo apt-get install python-dev</p>
+<p>    $ pip2 install Distorm3 PyCrypto Pillow OpenPyxl ujson pytz</p>
+<p>    </p>
+<p>    # Install libforensic1394</p>
+<p>    $ sudo apt install cmake</p>
+<p>    $ git clone https://github.com/FreddieWitherden/libforensic1394</p>
+<p>    $ cd libforensic1394</p>
+<p>    $ mkdir build &amp&amp cd build</p>
+<p>    $ cmake -G&quotUnix Makefiles&quot ../</p>
+<p>    $ make</p>
+<p>    $ sudo make install</p>
+<p><br/></p>
+<p>After we install all the dependencies we can start installing `volatility`.  </p>
+<p><br/></p>
+<p>    $ git clone https://github.com/volatilityfoundation/volatility.git</p>
+<p>    $ cd volatility</p>
+<p>    $ sudo python setup.py install</p>
+<p><br/></p>
+<h2>Volatile Testing Ground</h2>
+<p>Source samples that we use can be downloaded here.  </p>
+<p>LINK: &lthttps://github.com/volatilityfoundation/volatility/wiki/Memory-Samples&gt  </p>
+<p><br/></p>
+<p>For simpler command, you can use command below, you can put this files anywhere, but for this purpose, it is better to put it inside IMG folder.  </p>
+<p><br/></p>
+<p>    $ mkdir -p ~/IMG</p>
+<p>    $ cd ~/IMG</p>
+<p>    $ wget http://files.sempersecurus.org/dumps/cridex_memdump.zip ~/IMG/cridex_memdump.zip</p>
+<p>    $ unzip cridex_memdump.zip</p>
+<p><br/></p>
+<p>First, check if you&amprsquo;re inside `~/IMG` directory, after that we can proceed to `vol.py`. You might see some dependencies error, this is not intended, but because volatility itself has dependencies on `python2` modules.  </p>
+<p><br/></p>
+<p>    $ vol.py -f cridex.vmem imageinfo</p>
+<p>    </p>
+<p>    Volatility Foundation Volatility Framework 2.6.1</p>
+<p>    INFO    : volatility.debug    : Determining profile based on KDBG search...</p>
+<p>              Suggested Profile(s) : WinXPSP2x86, WinXPSP3x86 (Instantiated with WinXPSP2x86)</p>
+<p>                         AS Layer1 : IA32PagedMemoryPae (Kernel AS)</p>
+<p>                         AS Layer2 : FileAddressSpace (/home/paranoia/volatility3/cridex.vmem)</p>
+<p>                          PAE type : PAE</p>
+<p>                               DTB : 0x2fe000L</p>
+<p>                              KDBG : 0x80545ae0L</p>
+<p>              Number of Processors : 1</p>
+<p>         Image Type (Service Pack) : 3</p>
+<p>                    KPCR for CPU 0 : 0xffdff000L</p>
+<p>                 KUSER_SHARED_DATA : 0xffdf0000L</p>
+<p>               Image date and time : 2012-07-22 02:45:08 UTC+0000</p>
+<p>         Image local date and time : 2012-07-21 22:45:08 -0400</p>
+<p><br/></p>
+<p>Next we try using pslist command to see what process is running on the systems.  </p>
+<p><br/></p>
+<p>    $ vol.py --profile=WinXPSP3x86 -f cridex.vmem pslist</p>
+<p>    </p>
+<p>        Volatility Foundation Volatility Framework 2.6.1</p>
+<p>    Offset(V)  Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Start</p>
+<p>    ---------- -------------------- ------ ------ ------ -------- ------ ------ ------------------------------</p>
+<p>    0x823c89c8 System                    4      0     53      240 ------      0</p>
+<p>    0x822f1020 smss.exe                368      4      3       19 ------      0 2012-07-22 02:42:31 UTC+0000</p>
+<p>    0x822a0598 csrss.exe               584    368      9      326      0      0 2012-07-22 02:42:32 UTC+0000</p>
+<p>    0x82298700 winlogon.exe            608    368     23      519      0      0 2012-07-22 02:42:32 UTC+0000</p>
+<p>    0x81e2ab28 services.exe            652    608     16      243      0      0 2012-07-22 02:42:32 UTC+0000</p>
+<p>    0x81e2a3b8 lsass.exe               664    608     24      330      0      0 2012-07-22 02:42:32 UTC+0000</p>
+<p>    0x82311360 svchost.exe             824    652     20      194      0      0 2012-07-22 02:42:33 UTC+0000</p>
+<p>    0x81e29ab8 svchost.exe             908    652      9      226      0      0 2012-07-22 02:42:33 UTC+0000</p>
+<p>    0x823001d0 svchost.exe            1004    652     64     1118      0      0 2012-07-22 02:42:33 UTC+0000</p>
+<p>    0x821dfda0 svchost.exe            1056    652      5       60      0      0 2012-07-22 02:42:33 UTC+0000</p>
+<p>    0x82295650 svchost.exe            1220    652     15      197      0      0 2012-07-22 02:42:35 UTC+0000</p>
+<p>    0x821dea70 explorer.exe           1484   1464     17      415      0      0 2012-07-22 02:42:36 UTC+0000</p>
+<p>    0x81eb17b8 spoolsv.exe            1512    652     14      113      0      0 2012-07-22 02:42:36 UTC+0000</p>
+<p>    0x81e7bda0 reader_sl.exe          1640   1484      5       39      0      0 2012-07-22 02:42:36 UTC+0000</p>
+<p>    0x820e8da0 alg.exe                 788    652      7      104      0      0 2012-07-22 02:43:01 UTC+0000</p>
+<p>    0x821fcda0 wuauclt.exe            1136   1004      8      173      0      0 2012-07-22 02:43:46 UTC+0000</p>
+<p>    0x8205bda0 wuauclt.exe            1588   1004      5      132      0      0 2012-07-22 02:44:01 UTC+0000</p>
+<p><br/></p>
+<p>Since this test images are rather old as you can see on the starting process, it and the profle we use, you might want to use tools that are catered to newer OSes. All the command bellow that are using ps\* means checking what processes are running in the system, it will show the same thing from different viewpoint.  </p>
+<p><br/></p>
+<p>    $ vol.py --profile=WinXPSP3x86 -f cridex.vmem pstree</p>
+<p>    </p>
+<p>    Volatility Foundation Volatility Framework 2.6.1</p>
+<p>    Name                                                  Pid   PPid   Thds   Hnds Time</p>
+<p>    -------------------------------------------------- ------ ------ ------ ------ ----</p>
+<p>     0x823c89c8:System                                      4      0     53    240 1970-01-01 00:00:00 UTC+0000</p>
+<p>    . 0x822f1020:smss.exe                                 368      4      3     19 2012-07-22 02:42:31 UTC+0000</p>
+<p>    .. 0x82298700:winlogon.exe                            608    368     23    519 2012-07-22 02:42:32 UTC+0000</p>
+<p>    ... 0x81e2ab28:services.exe                           652    608     16    243 2012-07-22 02:42:32 UTC+0000</p>
+<p>    .... 0x821dfda0:svchost.exe                          1056    652      5     60 2012-07-22 02:42:33 UTC+0000</p>
+<p>    .... 0x81eb17b8:spoolsv.exe                          1512    652     14    113 2012-07-22 02:42:36 UTC+0000</p>
+<p>    .... 0x81e29ab8:svchost.exe                           908    652      9    226 2012-07-22 02:42:33 UTC+0000</p>
+<p>    .... 0x823001d0:svchost.exe                          1004    652     64   1118 2012-07-22 02:42:33 UTC+0000</p>
+<p>    ..... 0x8205bda0:wuauclt.exe                         1588   1004      5    132 2012-07-22 02:44:01 UTC+0000</p>
+<p>    ..... 0x821fcda0:wuauclt.exe                         1136   1004      8    173 2012-07-22 02:43:46 UTC+0000</p>
+<p>    .... 0x82311360:svchost.exe                           824    652     20    194 2012-07-22 02:42:33 UTC+0000</p>
+<p>    .... 0x820e8da0:alg.exe                               788    652      7    104 2012-07-22 02:43:01 UTC+0000</p>
+<p>    .... 0x82295650:svchost.exe                          1220    652     15    197 2012-07-22 02:42:35 UTC+0000</p>
+<p>    ... 0x81e2a3b8:lsass.exe                              664    608     24    330 2012-07-22 02:42:32 UTC+0000</p>
+<p>    .. 0x822a0598:csrss.exe                               584    368      9    326 2012-07-22 02:42:32 UTC+0000</p>
+<p>     0x821dea70:explorer.exe                             1484   1464     17    415 2012-07-22 02:42:36 UTC+0000</p>
+<p>    . 0x81e7bda0:reader_sl.exe                           1640   1484      5     39 2012-07-22 02:42:36 UTC+0000</p>
+<p><br/></p>
+<p>    $ vol.py --profile=WinXPSP3x86 -f cridex.vmem psxview</p>
+<p>    </p>
+<p>    Volatility Foundation Volatility Framework 2.6.1</p>
+<p>    Offset(P)  Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime</p>
+<p>    ---------- -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------</p>
+<p>    0x02498700 winlogon.exe            608 True   True   True     True   True  True    True</p>
+<p>    0x02511360 svchost.exe             824 True   True   True     True   True  True    True</p>
+<p>    0x022e8da0 alg.exe                 788 True   True   True     True   True  True    True</p>
+<p>    0x020b17b8 spoolsv.exe            1512 True   True   True     True   True  True    True</p>
+<p>    0x0202ab28 services.exe            652 True   True   True     True   True  True    True</p>
+<p>    0x02495650 svchost.exe            1220 True   True   True     True   True  True    True</p>
+<p>    0x0207bda0 reader_sl.exe          1640 True   True   True     True   True  True    True</p>
+<p>    0x025001d0 svchost.exe            1004 True   True   True     True   True  True    True</p>
+<p>    0x02029ab8 svchost.exe             908 True   True   True     True   True  True    True</p>
+<p>    0x023fcda0 wuauclt.exe            1136 True   True   True     True   True  True    True</p>
+<p>    0x0225bda0 wuauclt.exe            1588 True   True   True     True   True  True    True</p>
+<p>    0x0202a3b8 lsass.exe               664 True   True   True     True   True  True    True</p>
+<p>    0x023dea70 explorer.exe           1484 True   True   True     True   True  True    True</p>
+<p>    0x023dfda0 svchost.exe            1056 True   True   True     True   True  True    True</p>
+<p>    0x024f1020 smss.exe                368 True   True   True     True   False False   False</p>
+<p>    0x025c89c8 System                    4 True   True   True     True   False False   False</p>
+<p>    0x024a0598 csrss.exe               584 True   True   True     True   False True    True</p>
+<p><br/></p>
+<p>Under this will include all the connection on the system, either it is results from scanning and the connection that it uses.  </p>
+<p><br/></p>
+<p>    $ vol.py --profile=WinXPSP3x86 -f cridex.vmem connections</p>
+<p>    </p>
+<p>    Volatility Foundation Volatility Framework 2.6.1</p>
+<p>    Offset(V)  Local Address             Remote Address            Pid</p>
+<p>    ---------- ------------------------- ------------------------- ---</p>
+<p>    0x81e87620 172.16.112.128:1038       41.168.5.140:8080         1484</p>
+<p><br/></p>
+<p>    $ vol.py --profile=WinXPSP3x86 -f cridex.vmem connscan</p>
+<p>    </p>
+<p>    Volatility Foundation Volatility Framework 2.6.1</p>
+<p>    Offset(P)  Local Address             Remote Address            Pid</p>
+<p>    ---------- ------------------------- ------------------------- ---</p>
+<p>    0x02087620 172.16.112.128:1038       41.168.5.140:8080         1484</p>
+<p>    0x023a8008 172.16.112.128:1037       125.19.103.198:8080       1484</p>
+<p><br/></p>
+<p>You can see Geolocation of the IP&amprsquo;s using this:  </p>
+<p><br/></p>
+<p>    $ curl https://freegeoip.app/xml/41.168.5.140</p>
+<p>    &ltResponse&gt</p>
+<p>        &ltIP&gt41.168.5.140&lt/IP&gt</p>
+<p>        &ltCountryCode&gtZA&lt/CountryCode&gt</p>
+<p>        &ltCountryName&gtSouth Africa&lt/CountryName&gt</p>
+<p>        &ltRegionCode&gtGP&lt/RegionCode&gt</p>
+<p>        &ltRegionName&gtGauteng&lt/RegionName&gt</p>
+<p>        &ltCity&gtJohannesburg&lt/City&gt</p>
+<p>        &ltZipCode&gt2041&lt/ZipCode&gt</p>
+<p>        &ltTimeZone&gtAfrica/Johannesburg&lt/TimeZone&gt</p>
+<p>        &ltLatitude&gt-26.2308&lt/Latitude&gt</p>
+<p>        &ltLongitude&gt28.0585&lt/Longitude&gt</p>
+<p>        &ltMetroCode&gt0&lt/MetroCode&gt</p>
+<p>    &lt/Response&gt</p>
+<p>    </p>
+<p>    $ curl https://freegeoip.app/xml/125.19.103.198</p>
+<p>    &ltResponse&gt</p>
+<p>        &ltIP&gt125.19.103.198&lt/IP&gt</p>
+<p>        &ltCountryCode&gtIN&lt/CountryCode&gt</p>
+<p>        &ltCountryName&gtIndia&lt/CountryName&gt</p>
+<p>        &ltRegionCode&gt&lt/RegionCode&gt</p>
+<p>        &ltRegionName&gt&lt/RegionName&gt</p>
+<p>        &ltCity&gt&lt/City&gt</p>
+<p>        &ltZipCode&gt&lt/ZipCode&gt</p>
+<p>        &ltTimeZone&gtAsia/Kolkata&lt/TimeZone&gt</p>
+<p>        &ltLatitude&gt20.0063&lt/Latitude&gt</p>
+<p>        &ltLongitude&gt77.006&lt/Longitude&gt</p>
+<p>        &ltMetroCode&gt0&lt/MetroCode&gt</p>
+<p>    &lt/Response&gt</p>
+<p><br/></p>
+<h1>Scapy</h1>
+<p>Help you navigate and manipulate network packets.  </p>
+<p><br/></p>
+<p>From Danscourses :  </p>
+<p><br/></p>
+<p>-   Part 1 : &lthttps://www.youtube.com/watch?v=EuTAmtMGdNU&gt</p>
+<p>-   Part 2 : &lthttps://www.youtube.com/watch?v=gOcT5r0spVM&gt</p>
+<p><br/></p>
+<p>    WARNING: Calling str(pkt) on Python 3 makes no sense!</p>
+<p>    b&#39E\x00\x00\x1c\x00\x01\x00\x00@\x01\xf7\x83\xc0\xa8\x01\x0b\xc0\xa8\x01\x01\x08\x00\xf7\xff\x00\x00\x00\x00&#39</p>
+<p><br/></p>
+<h2>Analysis</h2>
+<p>This can be used as alternative of wireshark in cli, technicaly they do the same thing, also tshark (cli wireshark). To install use `sudo pip3 install scapy matplotlib pyx`, you can install just scapy, the rest are for warnings only.  </p>
+<p><br/></p>
+<p>    $ sudo scapy</p>
+<p>    &gt&gt&gt sniff(count=4)</p>
+<p>    &gt&gt&gt sniff(iface=&#39wlp2s0&#39, prn=lambda x: x.summary(), count=4) # show live transmissions, iface is network interface</p>
+<p>    &gt&gt&gt sniff(iface=&#39wlp2s0&#39, prn=lambda x: x.show(), count=4)    # show newest request (http, etc.)</p>
+<p><br/></p>
+<p>    # List of available commands</p>
+<p>    &gt&gt&gt lsc()</p>
+<p>    </p>
+<p>    IPID_count          : Identify IP id values classes in a list of packets</p>
+<p>    arpcachepoison      : Poison target&#39s cache with (your MAC,victim&#39s IP) couple</p>
+<p>    arping              : Send ARP who-has requests to determine which hosts are up</p>
+<p>    arpleak             : Exploit ARP leak flaws, like NetBSD-SA2017-002.</p>
+<p>    bind_layers         : Bind 2 layers on some specific fields&#39 values.</p>
+<p>    bridge_and_sniff    : Forward traffic between interfaces if1 and if2, sniff and return</p>
+<p>    chexdump            : Build a per byte hexadecimal representation</p>
+<p>    computeNIGroupAddr  : Compute the NI group Address. Can take a FQDN as input parameter</p>
+<p>    corrupt_bits        :</p>
+<p>    corrupt_bytes       :</p>
+<p>    defrag              : defrag(plist) -&gt ([not fragmented], [defragmented],</p>
+<p>    defragment          : defragment(plist) -&gt plist defragmented as much as possible</p>
+<p>    dhcp_request        : Send a DHCP discover request and return the answer</p>
+<p>    dyndns_add          : Send a DNS add message to a nameserver for &quotname&quot to have a new &quotrdata&quot</p>
+<p>    dyndns_del          : Send a DNS delete message to a nameserver for &quotname&quot</p>
+<p>    etherleak           : Exploit Etherleak flaw</p>
+<p>    explore             : Function used to discover the Scapy layers and protocols.</p>
+<p>    fletcher16_checkbytes: Calculates the Fletcher-16 checkbytes returned as 2 byte binary-string.</p>
+<p>    fletcher16_checksum : Calculates Fletcher-16 checksum of the given buffer.</p>
+<p>    fragleak            : --</p>
+<p>    fragleak2           : --</p>
+<p>    fragment            : Fragment a big IP datagram</p>
+<p>    fuzz                :</p>
+<p>    getmacbyip          : Return MAC address corresponding to a given IP address</p>
+<p>    getmacbyip6         : Returns the MAC address corresponding to an IPv6 address</p>
+<p>    hexdiff             :</p>
+<p>    hexdump             : Build a tcpdump like hexadecimal view</p>
+<p>    hexedit             : Run hexedit on a list of packets, then return the edited packets.</p>
+<p>    hexstr              : Build a fancy tcpdump like hex from bytes.</p>
+<p>    import_hexcap       : Imports a tcpdump like hexadecimal view</p>
+<p>    is_promisc          : Try to guess if target is in Promisc mode. The target is provided by its ip.</p>
+<p>    linehexdump         : Build an equivalent view of hexdump() on a single line</p>
+<p>    ls                  : List  available layers, or infos on a given layer class or name.</p>
+<p>    neighsol            : Sends and receive an ICMPv6 Neighbor Solicitation message</p>
+<p>    overlap_frag        : Build overlapping fragments to bypass NIPS</p>
+<p>    promiscping         : Send ARP who-has requests to determine which hosts are in promiscuous mode</p>
+<p>    rdpcap              : Read a pcap or pcapng file and return a packet list</p>
+<p>    report_ports        : portscan a target and output a LaTeX table</p>
+<p>    restart             : Restarts scapy</p>
+<p>    rfc                 :</p>
+<p>    send                :</p>
+<p>    sendp               :</p>
+<p>    sendpfast           : Send packets at layer 2 using tcpreplay for performance</p>
+<p>    sniff               :</p>
+<p>    split_layers        : Split 2 layers previously bound.</p>
+<p>    sr                  :</p>
+<p>    sr1                 :</p>
+<p>    sr1flood            : Flood and receive packets at layer 3 and return only the first answer</p>
+<p>    srbt                : send and receive using a bluetooth socket</p>
+<p>    srbt1               : send and receive 1 packet using a bluetooth socket</p>
+<p>    srflood             : Flood and receive packets at layer 3</p>
+<p>    srloop              :</p>
+<p>    srp                 :</p>
+<p>    srp1                :</p>
+<p>    srp1flood           : Flood and receive packets at layer 2 and return only the first answer</p>
+<p>    srpflood            : Flood and receive packets at layer 2</p>
+<p>    srploop             :</p>
+<p>    tcpdump             : Run tcpdump or tshark on a list of packets.</p>
+<p>    tdecode             :</p>
+<p>    traceroute          : Instant TCP traceroute</p>
+<p>    traceroute6         : Instant TCP traceroute using IPv6</p>
+<p>    traceroute_map      : Util function to call traceroute on multiple targets, thentshark : Sniff packets and print them calling pkt.summary().</p>
+<p>    wireshark           :</p>
+<p>    wrpcap              : Write a list of packets to a pcap file</p>
+<p><br/></p>
+<p>This is the possible command you can use, I will list just enough info for you to understand.  </p>
+<p><br/></p>
+<p>    # Read pcap file</p>
+<p>    &gt&gt&gt pak = rdpcap(&quot/home/codex/Downloads/ground.pcap&quot)</p>
+<p>    # List ground.pcap</p>
+<p>    &gt&gt&gt pak</p>
+<p>    &ltground.pcap: TCP:733 UDP:40 ICMP:0 Other:7&gt</p>
+<p>    # Length or total of packets captured</p>
+<p>    &gt&gt&gt len(p)</p>
+<p>    780</p>
+<p>    # Choose or select packet</p>
+<p>    &gt&gt&gt pkt = pak[100]</p>
+<p>    &gt&gt&gt pkt # show inside packet[100]</p>
+<p>    # Type of packet</p>
+<p>    &gt&gt&gt type(pkt)</p>
+<p>    scapy.layers.l2.Ether</p>
+<p>    # Userspace Variables inside packet[100]</p>
+<p>    &gt&gt&gt dir(pkt)</p>
+<p>    # Hex &gt There is usually passwords if on http (not careful)</p>
+<p>    &gt&gt&gt hexdump(pkt)</p>
+<p>    # List Information of packet[100]</p>
+<p>    &gt&gt&gt ls(pkt)</p>
+<p>    # Summary of packet[100]</p>
+<p>    &gt&gt&gt pkt.summary()</p>
+<p>    &#39Ether / IP / TCP 118.98.30.80:https &gt 192.168.0.0:XXXX A / Raw&#39</p>
+<p>    &gt&gt&gt pkt.show()</p>
+<p><br/></p>
+<h1>Android</h1>
+<p>Mobile digital forensics can be done in multiple ways, either manually or automatically. ADB tools are needed, also victim&amprsquo;s phone USB debugging option should be enabled.  </p>
+<p><br/></p>
+<h2>Android Triage</h2>
+<p>This script is used to alleviate the many commands that are available in ADB tools. ADB stands for Android Debug Bridge, this tool usually used to help developers in debugging Android applications during creation or compilation time in Android Studio (or others). Android Triage created by Mattia Epifani, this bash script can be used to automatize operations that are usually &ampldquo;cumbersome&amprdquo; - if you&amprsquo;re lazy - to a simple to understand script.  </p>
+<p><br/></p>
+<p>This is options that are available on the script itself, you might want to see inside the script in android&ltsub&gttriage&lt/sub&gt github.  </p>
+<p><br/></p>
