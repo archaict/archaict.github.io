@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+
+body       { padding: 20px; background-color: #222222; color: #dfdfdf; font-family: "Share Tech Mono";
+             font-size: 14px; line-height: 22px; margin: 0 auto; max-width: 960px; }
+
+pre        { color: #ecbe7b; }
+blockquote { color: #fabd2f; }
+a          { color: #ebcb8b; text-decoration: none; }
+a:before   { content: "=> "; }
+a:hover    { color: #5e81ac; }
+h1         { font-size: 20px; color: #bf616a; margin-bottom: 0px; }
+h2         { font-size: 16px; color: #d08770; margin-bottom: 0px; }
+h3         { font-size: 16px; color: #d08770; margin-bottom: 0px; }
+h4         { font-size: 16px; color: #d08770; margin-bottom: 0px; }
+h5         { font-size: 16px; color: #d08770; margin-bottom: 0px; }
+h6         { font-size: 16px; color: #d08770; margin-bottom: 0px; }
+h2         { font-size: 16px; color: #d08770; margin-bottom: 0px; }
+li         { color: #a3be8c; }
